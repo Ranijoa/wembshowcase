@@ -814,10 +814,9 @@ footer .f-logo svg { height: 18px; width: auto; filter: brightness(0) invert(0.5
 <!-- ═══════ CTA ═══════ -->
 <section class="cta-section" id="contact">
   <p class="cta-eyebrow">Contact</p>
-  <h2 class="cta-title">Ready to Get Started?</h2>
-  <p class="cta-sub">Our WEMB experts will deliver a live demo tailored to your environment.</p>
+  <h2 class="cta-title">Think Green, Innovate
+Digitally</h2>
   <div class="cta-btns">
-    <a href="mailto:demo@wecorp.co.kr" class="cta-btn-w">Request a Demo</a>
     <a href="#top" class="cta-btn-g">Back to Top</a>
   </div>
 </section>
@@ -875,7 +874,7 @@ document.querySelectorAll('.video-frame[data-ytid]').forEach((frame, idx) => {
       <div class="play-btn-apple"></div>
     </div>
     <iframe id="${iframeId}"
-      data-src="https://www.youtube-nocookie.com/embed/${vid}?autoplay=1&rel=0&modestbranding=1&color=white"
+      data-src="https://www.youtube-nocookie.com/embed/${vid}?autoplay=1&rel=0&modestbranding=1&color=white&playsinline=1&enablejsapi=1"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
       title="WEMB Solution Demo"></iframe>
@@ -888,6 +887,13 @@ document.querySelectorAll('.video-frame[data-ytid]').forEach((frame, idx) => {
     if (iframe.dataset.src) {
       iframe.src = iframe.dataset.src;
       delete iframe.dataset.src;
+      iframe.addEventListener('load', function onLoad() {
+        iframe.removeEventListener('load', onLoad);
+        iframe.contentWindow.postMessage(
+          '{"event":"command","func":"playVideo","args":""}',
+          'https://www.youtube-nocookie.com'
+        );
+      });
     }
     cover.classList.add('gone');
   });
