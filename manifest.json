@@ -1,6 +1,6 @@
 {
   "name": "WEMB Showcase",
-  "short_name": "WEMB",
+  "short_name": "Showcase",
   "description": "WEMB Solution Showcase",
   "start_url": "./index.html",
   "display": "standalone",
