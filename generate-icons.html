@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>WEMB PWA 아이콘 생성기</title>
+  <style>
+    body { font-family: sans-serif; padding: 40px; background: #f5f5f5; }
+    h2 { color: #4370ff; }
+    .previews { display: flex; gap: 40px; align-items: flex-end; margin: 30px 0; flex-wrap: wrap; }
+    .preview { text-align: center; }
+    .preview p { margin: 8px 0 4px; font-size: 13px; color: #555; }
+    canvas { border: 1px solid #ddd; background: white; display: block; }
+    .btn { display: inline-block; margin-top: 8px; padding: 8px 18px; background: #4370ff; color: white;
+           border-radius: 6px; cursor: pointer; font-size: 13px; text-decoration: none; }
+    .btn:hover { background: #2d55cc; }
+    .instructions { background: #fff; border-left: 4px solid #4370ff; padding: 16px 20px;
+                    border-radius: 4px; margin-top: 30px; font-size: 14px; line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <h2>WEMB PWA 아이콘 생성기</h2>
+  <p>아래 버튼을 클릭해 PNG 파일을 다운로드한 후 <code>icons/</code> 폴더에 넣으세요.</p>
+
+  <div class="previews">
+    <div class="preview">
+      <canvas id="c192" width="192" height="192"></canvas>
+      <p>icon-192.png (192×192)</p>
+      <a class="btn" id="dl192" download="icon-192.png">다운로드</a>
+    </div>
+    <div class="preview">
+      <canvas id="c512" width="512" height="512"></canvas>
+      <p>icon-512.png (512×512)</p>
+      <a class="btn" id="dl512" download="icon-512.png">다운로드</a>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <strong>사용 방법</strong><br>
+    1. 두 파일을 모두 다운로드합니다.<br>
+    2. 다운로드된 파일을 <code>icons/</code> 폴더로 이동합니다.<br>
+    3. 이 페이지는 더 이상 필요하지 않습니다.
+  </div>
+
+  <script>
+    const svgData = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#ffffff"/>
+  <svg x="77" y="221" width="358" height="70" viewBox="0 0 225 44">
+    <g transform="translate(-336.333 -193.655)">
+      <path d="M50.136,43.646a4.334,4.334,0,0,1-4.061-2.83L33.247,5.771A4.292,4.292,0,0,1,35.83.261a4.326,4.326,0,0,1,5.538,2.57L54.195,37.877a4.314,4.314,0,0,1-4.061,5.771Z" transform="translate(329.045 194.023)" fill="#4370ff"/>
+      <path d="M53.817,43.646a4.312,4.312,0,0,1-4.059-5.771L62.582,2.83A4.319,4.319,0,0,1,70.7,5.771L57.878,40.818a4.336,4.336,0,0,1-4.061,2.83Z" transform="translate(325.402 194.023)" fill="#4370ff"/>
+      <path d="M17.152,43.646a4.334,4.334,0,0,1-4.061-2.83L.262,5.771A4.251,4.251,0,0,1,.406,2.484a4.33,4.33,0,0,1,7.979.346L21.21,37.877a4.314,4.314,0,0,1-4.061,5.771Z" transform="translate(336.322 194.023)" fill="#4370ff"/>
+      <path d="M20.833,43.646a4.312,4.312,0,0,1-4.059-5.771L29.6,2.83A4.319,4.319,0,0,1,37.72,5.771L24.894,40.818a4.336,4.336,0,0,1-4.061,2.83Z" transform="translate(332.678 194.023)" fill="#4370ff"/>
+      <path d="M197.294,0a4.334,4.334,0,0,0-4.061,2.83L180.406,37.877a4.291,4.291,0,0,0,2.584,5.51,4.326,4.326,0,0,0,5.539-2.57L201.355,5.771A4.314,4.314,0,0,0,197.294,0Z" transform="translate(296.579 194.023)" fill="#4370ff"/>
+      <path d="M200.974,0a4.312,4.312,0,0,0-4.059,5.771l12.826,35.047a4.319,4.319,0,0,0,8.122-2.941L205.038,2.83A4.336,4.336,0,0,0,200.976,0Z" transform="translate(292.937 194.023)" fill="#4370ff"/>
+      <path d="M164.309,0a4.333,4.333,0,0,0-4.06,2.83L147.422,37.877a4.291,4.291,0,0,0,2.584,5.51,4.325,4.325,0,0,0,5.538-2.57L168.37,5.771A4.314,4.314,0,0,0,164.309,0Z" transform="translate(303.856 194.023)" fill="#4370ff"/>
+      <path d="M167.99,0a4.312,4.312,0,0,0-4.059,5.771l12.826,35.047a4.319,4.319,0,0,0,8.122-2.941L172.053,2.83A4.337,4.337,0,0,0,167.992,0Z" transform="translate(300.214 194.023)" fill="#4370ff"/>
+      <path d="M275.659,13.061A13.089,13.089,0,0,0,263.952.078,13.369,13.369,0,0,0,262.528,0H233.835a4.3,4.3,0,1,0,0,8.6h28.693a4.465,4.465,0,1,1,.007,8.93H236.114a4.3,4.3,0,1,0,0,8.6h26.411a4.465,4.465,0,1,1,0,8.93H233.833a4.3,4.3,0,1,0,0,8.6h28.692a13.324,13.324,0,0,0,1.425-.078,13.038,13.038,0,0,0,8.311-21.745,12.968,12.968,0,0,0,3.4-8.762Z" transform="translate(285.688 194.023)" fill="#4370ff"/>
+      <path d="M82.572,13.061A13.089,13.089,0,0,1,94.279.078,13.374,13.374,0,0,1,95.7,0H124.4a4.3,4.3,0,1,1,0,8.6H95.7a4.465,4.465,0,1,0-.008,8.93h26.421a4.3,4.3,0,1,1,0,8.6H95.705a4.465,4.465,0,1,0,0,8.93H124.4a4.3,4.3,0,1,1,0,8.6H95.705a13.323,13.323,0,0,1-1.424-.078A13.038,13.038,0,0,1,85.97,21.828a12.968,12.968,0,0,1-3.4-8.762Z" transform="translate(318.105 194.023)" fill="#26cc15"/>
+    </g>
+  </svg>
+</svg>`;
+
+    const blob = new Blob([svgData], { type: 'image/svg+xml' });
+    const url  = URL.createObjectURL(blob);
+
+    function renderToCanvas(canvasId, size, dlId) {
+      const canvas = document.getElementById(canvasId);
+      const ctx    = canvas.getContext('2d');
+      const img    = new Image();
+      img.onload = () => {
+        ctx.clearRect(0, 0, size, size);
+        ctx.drawImage(img, 0, 0, size, size);
+        document.getElementById(dlId).href = canvas.toDataURL('image/png');
+      };
+      img.src = url;
+    }
+
+    renderToCanvas('c192', 192, 'dl192');
+    renderToCanvas('c512', 512, 'dl512');
+  </script>
+</body>
+</html>
