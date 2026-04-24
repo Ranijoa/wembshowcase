@@ -1,6 +1,6 @@
 const CACHE = 'wemb-v1';
 const ASSETS = [
-  './WEMB-Showcase.html',
+  './index.html',
   './manifest.json',
   './icons/icon-192.png',
   './icons/icon-512.png',

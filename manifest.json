@@ -2,7 +2,7 @@
   "name": "WEMB Showcase",
   "short_name": "WEMB",
   "description": "WEMB Solution Showcase",
-  "start_url": "./WEMB-Showcase.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4370ff",
